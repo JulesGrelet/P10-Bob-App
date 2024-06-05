@@ -1,4 +1,4 @@
-FROM node:latest as build
+FROM node:18.16.0-alpine
 
 WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
@@ -8,7 +8,6 @@ RUN npm run build
  
 FROM nginx:latest as production
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /usr/local/app/dist/bobapp /usr/share/nginx/html
+COPY front/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
