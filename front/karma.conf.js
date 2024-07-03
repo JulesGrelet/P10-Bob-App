@@ -32,7 +32,7 @@ module.exports = function (config) {
         { type: 'html' },
         { type: 'text-summary' }
       ],
-      /*
+      /**
       Will be used soon to improve test validation.
       CI step of test will only be validated if rates (80%) are all reached.
       check: {
